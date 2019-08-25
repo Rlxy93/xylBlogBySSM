@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>修改博客</title>
+    <link rel="shortcut icon" href="/xylBlog/resources/images/star.ico">
+    <link rel="stylesheet" type="text/css" href="/xylBlog/resources/css/admin.css">
+    <style type="text/css">
+        textarea {
+            margin-top: 20px;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .body_bottom {
+            margin-top: 1%;
+            text-align: center;
+        }
+    </style>
+    <script language="JavaScript" src="/xylBlog/resources/js/admin.js"></script>
+</head>
+<body>
+<div class="body">
+    <input id="title" type="text" style="border-radius:10px;width:40%;height:3%;border:1px solid silver;"
+           name="title" placeholder="输入你的标题...">
+</div>
+<textarea id="body" name="body"></textarea>
+<div class="body">
+    分类<select name="category" id="category">
+</select>
+    <a href="addCategory.html">创建新分类</a><br><br>
+    是否需要密码访问<input id="mm" onclick="mm1()" type="checkbox" name="mm"><br>
+    <span id="yzmm" style="display:none;">输入密码：<input id="password" type="password" name="yzmm"></span>
+</div>
+<input id="blogId" type="hidden" value=""/>
+<input id="oldCategory" type="hidden" value=""/>
+<div>
+    <input id="edit" type="button" value="修改"
+           style="border-radius:10px;border:1px solid silver;margin-top:1%;width:6%;height:3%;">
+</div>
+</div>
+</form>
+<script src="/xylBlog/resources/js/jquery-1.11.2.min.js"></script>
+<script src="/xylBlog/resources/js/jquery.cookie.js"></script>
+<script src="/xylBlog/resources/js/checkLogin.js"></script>
+<link rel="stylesheet" href="/xylBlog/resources/css/qing-style.css"/>
+<script type="text/javascript" src="/xylBlog/resources/js/qing-editor-all.js"></script>
+<script type="text/javascript" src="/xylBlog/resources/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Dao.BlogDao">
+    <select id="getBlogByCategoryId" parameterType="String" resultType="Blog">
+        select * from blog as b,category as c where c.id=? and b.category=c.category order by id desc
+    </select>
+    <select id="getBlogByBlogId" parameterType="String" resultType="Blog">
+        select * from blog where id=#{blogId} order by id desc
+    </select>
+    <delete id="deleteBlogByBlogId" parameterType="String">
+        delete from blog where id=#{blogId}
+    </delete>
+    <select id="getAllBlog" resultType="Blog">
+        select * from blog order by id desc
+    </select>
+    <insert id="addBlog" parameterType="Blog">
+        insert into blog values(#{id},#{title},#{body},#{time},#{category},#{mm},#{yzmm})
+    </insert>
+    <select id="searchBlog" parameterType="String" resultType="Blog">
+        select * from blog where body like '%${_parameter}%' or title like '%${_parameter}%' order by id desc
+    </select>
+    <select id="getBlogByCategory" parameterType="String" resultType="Blog">
+        select * from blog where category = #{_parameter} order by id desc
+    </select>
+</mapper>

@@ -1,0 +1,17 @@
+body{
+	background-color:#F5F5F5;
+}
+a:link{
+	color:black;
+	text-decoration:none;
+}
+a:hover{
+	color:red;
+	text-decoration:underline;
+}
+a:active{
+	color:red;
+}
+a:visited{
+	color:black;
+}

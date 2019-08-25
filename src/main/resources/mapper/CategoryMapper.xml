@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Dao.CategoryDao">
+    <insert id="addCategory" parameterType="String">
+        insert into category values(null,#{category},0)
+    </insert>
+    <select id="getAllCategory" resultType="Category">
+        select * from category
+    </select>
+    <update id="updateCategoryByBlogId" parameterType="String">
+        update category set count=count-1 where category in (select category from blog where id=#{BlogId} group by category)
+    </update>
+    <update id="updateCategoryByCategoryjia" parameterType="Blog">
+        update category set count=count+1 where category=#{category}
+    </update>
+    <update id="updateCategoryByCategoryjian" parameterType="Blog">
+        update category set count=count-1 where category=#{category}
+    </update>
+</mapper>
